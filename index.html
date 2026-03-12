@@ -2,25 +2,35 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather Dashboard</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <title>News Hub</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="app">
-        <h1>Weather Dashboard</h1>
-        <p class="subtitle">Live weather for 3 cities using Promise.all and Open-Meteo API</p>
 
-        <div id="loader" class="loader hidden"></div>
+    <header>
+        <h1>📰 News Hub</h1>
 
-        <div id="error" class="error hidden"></div>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search news topic...">
+            <button onclick="searchNews()">Search</button>
+        </div>
 
-        <div id="weather-container" class="container"></div>
-    </div>
+        <div class="topics">
+            <button onclick="fetchNews('technology')">Technology</button>
+            <button onclick="fetchNews('sports')">Sports</button>
+            <button onclick="fetchNews('india')">India</button>
+            <button onclick="fetchNews('science')">Science</button>
+            <button onclick="fetchNews('business')">Business</button>
+        </div>
+
+    </header>
+
+    <div id="newsContainer" class="news-container"></div>
 
     <script src="script.js"></script>
+
 </body>
 
 </html>
